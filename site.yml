@@ -1,0 +1,4 @@
+- hosts: webserver
+  remote_user: ubuntu
+  roles:
+     - docker

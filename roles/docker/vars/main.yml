@@ -1,0 +1,7 @@
+---
+# vars file for docker
+docker_username: admin
+docker_pass: 123456
+docker_image_name: star936/test
+docker_image_tag: master
+ansible_ssh_private_key_file: ~/.ssh/id_rsa
