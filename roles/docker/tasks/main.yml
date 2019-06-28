@@ -5,7 +5,13 @@
     username: "{{ docker_username }}"
     password: "{{ docker_pass }}"
 
-- name: Pull docker image
-  docker_image:
-    name: "{{ docker_image_name }}"
-    tag: "{{ docker_image_tag }}"
+- name: Start container
+  docker_container:
+      name: "{{ container_name }}"
+      image: "{{ docker_image_name }}:{{ docker_image_tag }}"
+      pull: true
+      state: "{{ state|default('started') }}"
+      restart: yes
+      restart_policy: always
+      network_mode: host
+  
